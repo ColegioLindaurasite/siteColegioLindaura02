@@ -237,6 +237,55 @@ header .dropdown .dropdown-list>li a:hover {
 #linkedin-link img {background-color: #0073b1;}
 #linkedin-link img:hover {background-color: rgb(0, 85, 147);}
 
+.carrossel {
+  position: relative;
+  width: 100vw;
+  max-width: 2200px;
+  height: 600px;
+  margin: auto;
+  overflow: hidden;
+}
+.carrossel-imagem {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carrossel-imagem.active {
+  display: block;
+}
+.anterior, .proximo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  outline: none !important;
+
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 1;
+}
+.anterior { left: 10px; }
+.proximo { right: 10px; }
+
+.carrossel-imagem {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.carrossel-imagem.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .banner .carousel {
     display: flex;
     justify-content: center;

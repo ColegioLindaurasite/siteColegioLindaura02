@@ -30,3 +30,33 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+const imagens = document.querySelectorAll('.carrossel-imagem');
+const btnAnterior = document.querySelector('.anterior');
+const btnProximo = document.querySelector('.proximo');
+let indiceAtual = 0;
+
+function mostrarImagem(indice) {
+  imagens.forEach((img, i) => {
+    img.style.display = i === indice ? 'block' : 'none';
+  });
+}
+
+btnAnterior.addEventListener('click', () => {
+  indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+  mostrarImagem(indiceAtual);
+});
+
+btnProximo.addEventListener('click', () => {
+  indiceAtual = (indiceAtual + 1) % imagens.length;
+  mostrarImagem(indiceAtual);
+});
+
+// Inicializa o carrossel
+mostrarImagem(indiceAtual);
+
+function mostrarImagem(indice) {
+  imagens.forEach((img, i) => {
+    img.classList.toggle('active', i === indice);
+  });
+}
