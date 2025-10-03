@@ -10,26 +10,74 @@ big_lists.forEach((big_list, index) => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
 
-const imagem1 = document.getElementById('imagem1');
-const modal = document.getElementById('modalImagem');
-const imgExpandida = document.getElementById('imgExpandida');
-const fechar = document.getElementsByClassName('fechar')[0];
+  // --- LÓGICA DO MODAL DA GALERIA ---
 
-imagem1.onclick = function() {
-  modal.style.display = "block";
-  imgExpandida.src = this.src;
-}
+  // 1. Seleciona os elementos necessários do HTML
+  const modal = document.getElementById('modalImagem');
+  const imgExpandida = document.getElementById('imgExpandida');
+  const imagensDaGaleria = document.querySelectorAll('.imagem-galeria');
+  const botaoFechar = document.querySelector('.fechar');
+  const corpoDaPagina = document.getElementById('efeito-blur-pagina');
 
-fechar.onclick = function() {
-  modal.style.display = "none";
-}
+  // 2. Adiciona um evento de clique para cada imagem da galeria
+  imagensDaGaleria.forEach(imagem => {
+      imagem.addEventListener('click', function() {
+          // Pega o ID da imagem clicada (ex: "foto1")
+          const imagemID = this.id;
+          
+          // Monta o caminho da imagem que será exibida no modal
+          const imagemSrc = `/img/gallery/${imagemID}.webp`;
+          
+          // Define o SRC da imagem dentro do modal
+          imgExpandida.src = imagemSrc;
+          
+          // Mostra o modal (usando flex para centralizar)
+          modal.style.display = 'flex';
+          
+          // Adiciona o efeito de blur no fundo da página
+          corpoDaPagina.classList.add('blur');
+      });
+  });
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  // 3. Função para fechar o modal
+  function fecharModal() {
+      modal.style.display = 'none';
+      // Remove o efeito de blur do fundo da página
+      corpoDaPagina.classList.remove('blur');
   }
-}
+
+  // 4. Adiciona os eventos para fechar o modal
+  // Clicando no "X"
+  botaoFechar.addEventListener('click', fecharModal);
+
+  // Clicando fora da imagem (no fundo escuro)
+  modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+          fecharModal();
+      }
+  });
+  
+  // --- FIM DA LÓGICA DO MODAL ---
+
+
+  // (Você pode adicionar outras funções do seu site aqui, como a do carrossel, etc.)
+
+});
+
+//Função para executar apenas um vídeo por vez. 
+const videos = document.querySelectorAll('.my-video');
+
+videos.forEach(video => {
+  video.addEventListener('play', () => {
+    videos.forEach(otherVideo => {
+      if (otherVideo !== video) {
+        otherVideo.pause();
+      }
+    });
+  });
+});
 
 const imagens = document.querySelectorAll('.carrossel-imagem');
 const btnAnterior = document.querySelector('.anterior');
