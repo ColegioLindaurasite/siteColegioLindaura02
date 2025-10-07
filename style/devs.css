@@ -1,127 +1,70 @@
-:root {
-    --color-01: #000000;
-    --color-02: #ffffff;
-    --color-03: rgb(240, 240, 240);
-    /* --color-04: #4b05d6;
-    --color-05: #3704a3;
-    --color-06: #ff3232;
-    --color-07: #b32424; */
-
-    --color-04: #4305be;
-    --color-05: #2e0586;
-    --color-06: #dc3030;
-    --color-07: #9c2020;
-
-    --color-08: #DEDEDE;
-
-    --fonte-01: "Open Sans", sans-serif;
-}
-
-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    height: 60px;
-    width: 100%;
-    background-color: var(--color-05);
-    border-bottom: 2px solid var(--color-07);
-    z-index: 10;
-}
-
-header .container {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .container #logo>a {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-header .container #logo>a p {
-    font-size: 14px;
-    color: var(--color-02);
-}
-
-header #logo img {
-    height: 40px;
-}
-
-header #navigation {
-    height: 100%;
-    width: 800px;
-}
-
-.container {
-    width: calc(100vw - 300px);
-    max-width: 1600px;
-    margin: 0 auto;
+.main-section {
+    padding-top: 0 !important;
 }
 
 .title {
-    margin-top: 50px;
-    font-size: 3em;
+    font-size: 36px;
+    font-weight: 600;
     display: block;
 }
 
 .on {
-    font-size: 1.2em;
+    font-size: 18px;
     text-align: justify;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    line-height: 1.6em;
-    color: var(--color-01);
-    font-family: var(--fonte-01);
-    padding: 0 10px;
+    margin: 20px 0 25px 0;
 }
 
-.containerList {
+.developers-list {
     background-color: var(--color-08);
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-radius: 10px;
 }
 
-.card {
+.developers-list .card {
     background-color: var(--color-03);
-    width: 97%;
-    margin: 20px auto 0 auto;
+    width: 100%;
     display: block;
-    gap: 50px;
-    flex-wrap: wrap;
-    border-radius: 30px;
+    border-radius: 0 10px 10px 0;
+    padding: 20px;
+    cursor: pointer;
+    border: 1px solid var(--color-01);
+    border-left: 5px solid var(--color-01);
 }   
 
-.card h2 {
-    padding-top: 10px;
-    font-size: 1.5em;
-    margin: 3px 0 3px 20px;
-    width: 80%;
+.developers-list .card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.card p {
-    font-size: 1em;
-    text-align: justify;
-    margin: 10px 0 10px 20px;
-    line-height: 1.6em;
-    color: var(--color-01);
-    font-family: var(--fonte-01);
-    width: 80%;
+.developers-list .card a {
+    padding-right: 10px;
 }
 
-.card a {
+.developers-list .card a:hover {
+    text-decoration: underline !important;
+}
+
+.developers-list .card:hover {
+    transform: translateX(5px);
+}
+
+
+.developers-list .card a {
     color: var(--color-01);
     text-decoration: none;
 }
 
-.card img {
+.developers-list .card a i {
+    margin-right: 5px;
+}
+
+.developers-list .card img {
     width: 70px;
-    margin: 10px 10px 0 0;
     display: inline;
     object-fit: cover;
     float: right;

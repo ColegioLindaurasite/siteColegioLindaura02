@@ -397,17 +397,7 @@ main {
     height: 250px;
     cursor: pointer;
     overflow: hidden;
-}
-
-#ensino .teaching-categories-list-item:nth-child(1),
-#ensino .teaching-categories-list-item:nth-child(4),
-#ensino .teaching-categories-list-item:nth-child(5) {
     background-color: var(--color-05);
-}
-
-#ensino .teaching-categories-list-item:nth-child(2),
-#ensino .teaching-categories-list-item:nth-child(3) {
-    background-color: var(--color-07);
 }
 
 #ensino .teaching-category-content {
