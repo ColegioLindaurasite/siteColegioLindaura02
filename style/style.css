@@ -43,7 +43,6 @@ html {
     font-family: var(--fonte-01) !important;
     transition: .5s !important;
     box-sizing: border-box;
-    /* background-color: rgba(0, 0, 255, .1); */
 }
 
 body {
@@ -165,7 +164,6 @@ header .navigation-list-item.dropdown button::before {
 
 header .dropdown .dropdown-list {
     position: absolute;
-    /* margin-top: 5px; */
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -212,15 +210,32 @@ header .dropdown .dropdown-list>li a:hover {
     right: 20px;
 }
 
-.social-medias-list-item img {
+.social-medias-list-item a i {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 5px 10px;
     height: 30px;
     width: 30px;
     padding: 5px;
     border-radius: 5px;
+    color: var(--color-02);
+}
+
+.social-medias-list-item:hover {
+    transform: translateX(3px);
+}
+
+.social-medias-list-item #instagram-link i {
+    background-color: #DD217B;
+}
+
+.social-medias-list-item #facebook-link i {
+    background-color: #1877F2;
+}
+
+.social-medias-list-item #linkedin-link i {
+    background-color: #0072B1;
 }
 
 #developers {
@@ -387,12 +402,10 @@ main {
     position: absolute;
     height: 100%;
     width: 100%;
-    /* background-color: rgba(179, 36, 36, .5); */
     background-color: rgba(55, 4, 163, .4);
     color: var(--color-02);
     display: flex;
     justify-content: center;
-    /* padding-top: 50px; */
     align-items: center;
     z-index: 2;
 }
@@ -448,11 +461,6 @@ main {
     gap: 15px;
 }
 
-/* #professores #teachers-list.opened {
-    max-height: 3000px;
-    border-color: transparent;
-} */
-
 #professores .teachers-list-item {
     min-height: 120px;
     display: flex;
@@ -473,10 +481,6 @@ main {
     object-fit: cover;
     border-radius: 50%;
 }
-
-/* #professores .teachers-list-item:hover {
-    transform: scale(1.02);
-} */
 
 #professores .teachers-list-item .teacher-name {
     font-size: 16px;
@@ -718,13 +722,7 @@ main {
     margin: 0 auto;
 }
 
-/* #equipe #team-list.opened {
-    max-height: 3000px;
-    border-color: transparent;
-} */
-
 #equipe .team-list-item {
-    /* width: 150px; */
     width: 150px;
     background-color: var(--color-05);
     color: var(--color-02);
@@ -786,8 +784,6 @@ main {
 }
 
 #projetos .projects-list-item-image img {
-    /* min-height: 175px; */
-    /* height: auto; */
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -798,20 +794,14 @@ main {
     height: min-content;
     width: 100%;
     padding: 15px;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
 }
 
 #projetos .projects-list-item-informations span {
     color: var(--color-01);
     font-size: 12px;
     padding: 3px 7px;
-    /* background-color: var(--color-07); */
     border-left: 2px solid var(--color-05);
-    /* border-radius: 0 5px 5px 0; */
     white-space: wrap;
-    /* width: min-content; */
     display: block;
     margin-bottom: 10px;
 }
@@ -827,8 +817,6 @@ main {
     line-height: 15px;
     margin-bottom: 15px;
     text-wrap: wrap;
-    /* max-height: 50px;
-    overflow-y: auto; */
 }
 
 #projetos .projects-list-item-informations a {
@@ -841,8 +829,6 @@ main {
     white-space: nowrap;
     width: min-content;
     text-transform: uppercase;
-    /* position: absolute;
-    bottom: 15px; */
 }
 
 #projetos .projects-list-item-informations a:hover {
@@ -1017,7 +1003,6 @@ main {
 
 #contato {
     background-color: var(--color-05);
-    /* margin-bottom: 100px; */
 }
 
 #contato .container {
@@ -1037,14 +1022,20 @@ main {
 }
 
 #contato .contact-list-item {
-    /* width: 100%; */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    /* margin: 10px; */
     color: var(--color-02);
     font-size: 14px;
+}
+
+#contato .contact-list-item a {
+    color: var(--color-02);
+}
+
+#contato .contact-list-item a:hover {
+    text-decoration: underline !important;
 }
 
 #contato .contact-list-item img {
@@ -1118,11 +1109,7 @@ footer .footer-column-item a:hover {
     }
 
     #estrutura .structure-list-item {
-        /* width: 100%;
-        height: 100%; */
         flex: 0 0 auto;
-        /* max-width: unset; */
-        /* width: auto; */
     }
 
     #estrutura .structure-list-item:hover {
@@ -1166,10 +1153,6 @@ footer .footer-column-item a:hover {
         display: none;
     }
 
-    #projetos .projects-list-item {
-        /* grid-template-columns: 3100px 1fr; */
-    }
-
     #eventos #events-list {
         grid-template-columns: 1fr 1fr;
     }
@@ -1190,13 +1173,11 @@ footer .footer-column-item a:hover {
         top: 60px;
         height: auto;
         align-items: flex-start;
-        /* width: 200px; */
         border-radius: 0 0 5px 5px;
         box-shadow: 0 0 5px var(--color-01);
         opacity: 0;
         visibility: hidden;
         max-height: 0;
-        /* overflow: hidden; */
         transition: .5s;
     }
 
@@ -1210,7 +1191,6 @@ footer .footer-column-item a:hover {
         width: 25px;
         font-size: 25px;
         text-align: center;
-        /* background-color: turquoise; */
         cursor: pointer;
         z-index: 11;
     }
