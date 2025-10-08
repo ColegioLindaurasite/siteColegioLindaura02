@@ -344,6 +344,7 @@ header .dropdown .dropdown-list>li a:hover {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    filter: saturate(80%);
 }
 
 .carrossel-imagem.active {
@@ -396,13 +397,14 @@ main {
     height: 250px;
     cursor: pointer;
     overflow: hidden;
+    background-color: var(--color-05);
 }
 
 #ensino .teaching-category-content {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(55, 4, 163, .4);
+    /* background-color: rgba(55, 4, 163, .4); */
     color: var(--color-02);
     display: flex;
     justify-content: center;
@@ -421,6 +423,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     z-index: 1;
 }
 
@@ -1219,8 +1222,16 @@ footer .footer-column-item a:hover {
         width: calc(100vw - 50px);
     }
 
+    .carrossel {
+        height: 120px;
+    }
+
     #ensino #teaching-categories-list {
         grid-template-columns: 1fr;
+    }
+
+    #ensino .teaching-categories-list-item {
+        min-height: 400px;
     }
 
     #equipe #team-list {
